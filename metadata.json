@@ -1,0 +1,6 @@
+{
+  "name": "KMU Premium Landingpage",
+  "description": "Eine hochkonvertierende, extrem schlanke Landingpage für ein lokales Meister-KMU im Alex Hormozi Stil.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

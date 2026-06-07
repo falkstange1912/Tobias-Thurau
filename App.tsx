@@ -25,6 +25,9 @@ import {
   Vote
 } from "lucide-react";
 
+// VITE-LÖSUNG: Importiert das Bild direkt aus demselben Ordner
+import CandidateImage from "./Bild.jpg";
+
 interface CitizenFeedback {
   id: string;
   name: string;
@@ -42,9 +45,6 @@ const PRIORITIES = [
   "Infrastruktur & Architektur im Kreis",
   "Wirtschaft & Generationengerechtigkeit"
 ];
-
-// Greift direkt auf deine lokale Datei im Projekt zu
-const CANDIDATE_IMAGE_URL = "Bild.jpg";
 
 export default function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -176,7 +176,7 @@ export default function App() {
         )}
       </header>
 
-      {/* Hero Section mit Kandidatenbild */}
+      {/* Hero Section */}
       <section id="hero" className="relative py-12 md:py-20 bg-white overflow-hidden">
         <div className="absolute top-1/4 right-0 w-80 h-80 bg-[#007A87]/5 rounded-full blur-[120px] pointer-events-none animate-pulse-slow" />
         
@@ -200,9 +200,9 @@ export default function App() {
                 Ich kandidiere als Landrat für unseren Landkreis Wolfenbüttel – als parteiübergreifender und unabhängiger Kandidat, nominiert von der CDU Wolfenbüttel. Als Brandschutzingenieur bringe ich echte Verantwortung und Verlässlichkeit mit.
               </p>
 
-              {/* Bildplatzierung für Mobilgeräte */}
+              {/* Mobil-Bild */}
               <div className="block lg:hidden my-6 w-full max-w-[280px] mx-auto aspect-[3/4] overflow-hidden shadow-lg border border-slate-200">
-                <img src={CANDIDATE_IMAGE_URL} alt="Tobias Thurau" className="w-full h-full object-cover" onError={(e)=>{e.currentTarget.src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=400"}} />
+                <img src={CandidateImage} alt="Tobias Thurau" className="w-full h-full object-cover" />
               </div>
 
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
@@ -223,15 +223,14 @@ export default function App() {
               </div>
             </div>
 
-            {/* Desktop Portrait Showcase */}
+            {/* Desktop-Bild */}
             <div className="hidden lg:col-span-5 lg:flex justify-center items-center">
               <div className="relative w-full max-w-[340px] aspect-[3/4] bg-slate-50 shadow-2xl border border-slate-100 p-2.5">
                 <div className="w-full h-full overflow-hidden relative">
                   <img
-                    src={CANDIDATE_IMAGE_URL}
+                    src={CandidateImage}
                     alt="Tobias Thurau Portrait"
                     className="w-full h-full object-cover"
-                    onError={(e)=>{e.currentTarget.src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=400"}}
                   />
                 </div>
                 <div className="absolute -bottom-4 -left-4 bg-white px-4 py-2.5 border border-slate-100 shadow-xl font-mono text-[10px] text-slate-500">
